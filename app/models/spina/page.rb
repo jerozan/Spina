@@ -78,7 +78,7 @@ module Spina
     def set_materialized_path
       self.old_path = materialized_path
       self.materialized_path = localized_materialized_path
-      self.materialized_path += "-#{self.class.i18n.where(materialized_path: materialized_path).count}" if self.class.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
+      self.materialized_path = localized_materialized_path + "-#{self.class.i18n.where(materialized_path: materialized_path).count}" if self.class.i18n.where(materialized_path: materialized_path).where.not(id: id).count > 0
       materialized_path
     end
 

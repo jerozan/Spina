@@ -46,6 +46,7 @@ module Spina
         respond_to do |format|
           Mobility.locale = @locale
           if @page.update_attributes(page_params)
+            @page.touch
             format.html { redirect_to spina.edit_admin_page_url(@page, params: {locale: @locale}), flash: {success: t('spina.pages.saved')} }
             format.js
           else

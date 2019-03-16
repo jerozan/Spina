@@ -6,16 +6,16 @@ module Spina
       before_action :set_user, only: [:edit, :update, :destroy]
 
       def index
-        @users = User.all
+        @users = Spina::User.all
       end
 
       def new
-        @user = User.new
+        @user = Spina::User.new
         add_breadcrumb I18n.t('spina.users.new')
       end
 
       def create
-        @user = User.new(user_params)
+        @user = Spina::User.new(user_params)
         add_breadcrumb I18n.t('spina.users.new')
         if @user.save
           redirect_to admin_users_url
@@ -25,11 +25,11 @@ module Spina
         end
       end
 
-      def edit        
+      def edit
         add_breadcrumb "#{@user}"
       end
 
-      def update        
+      def update
         add_breadcrumb "#{@user}"
         if @user.update_attributes(user_params)
           redirect_to spina.admin_users_url
@@ -39,7 +39,7 @@ module Spina
         end
       end
 
-      def destroy        
+      def destroy
         @user.destroy unless @user == current_spina_user
         redirect_to admin_users_url
       end
@@ -55,7 +55,7 @@ module Spina
         end
 
         def set_user
-          @user = User.find(params[:id])
+          @user = Spina::User.find(params[:id])
         end
     end
   end

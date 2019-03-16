@@ -24,7 +24,7 @@ module Spina
     private
 
     def uniqueness_of_email
-      if email_changed? && User.where(email: email).exists?
+      if email_changed? && Spina::User.where(email: email).exists?
         errors.add(:email, I18n.t('errors.messages.taken'))
       end
     end

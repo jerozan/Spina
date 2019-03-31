@@ -6,17 +6,17 @@ module Spina
       before_action :set_breadcrumb, except: [:show]
       before_action :set_navigation, only: [:show, :edit, :update]
 
-      def show        
+      def show
         add_breadcrumb t('spina.website.pages')
       end
 
-      def edit        
+      def edit
         add_breadcrumb @navigation.label, spina.admin_navigation_path(@navigation)
         add_breadcrumb t('spina.edit')
         render layout: 'spina/admin/admin'
       end
 
-      def update        
+      def update
         if @navigation.update_attributes(navigation_params)
           redirect_to spina.admin_navigation_path(@navigation)
         else
@@ -52,7 +52,7 @@ module Spina
         end
 
         def navigation_params
-          params.require(:navigation).permit(:auto_add_pages, page_ids: [])
+          params.require(:navigation).permit(:auto_add_pages, :label, page_ids: [])
         end
 
         def set_navigation

@@ -160,6 +160,9 @@ es:
         facebook: Facebook
         twitter: Twitter
         google_plus: Google+
+        linkedin: Linkedin
+        viadeo: Viadeo
+        youtube: Youtube
 
       spina/attachment:
         created_at: Creado en
@@ -214,7 +217,7 @@ es:
         auto_add_pages_description: Páginas nuevas son agregadas automáticamente a esta navegación
         pages: Páginas
         pages_description: Seleccione las páginas que quiere usar en esta navegación
-      
+
       spina/user:
         email: Email
         password: Contraseña

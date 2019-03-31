@@ -173,6 +173,9 @@ en:
         facebook: Facebook
         twitter: Twitter
         google_plus: Google+
+        linkedin: Linkedin
+        viadeo: Viadeo
+        youtube: Youtube
 
       spina/attachment:
         created_at: Created at
